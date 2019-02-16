@@ -1,0 +1,27 @@
+{
+  "name": "booksearch",
+  "version": "1.0.0",
+  "description": "A web application for searching and saving books",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaeltrevino/booksearch.git"
+  },
+  "keywords": [
+    "book",
+    "search"
+  ],
+  "author": "Rafael Treviño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaeltrevino/booksearch/issues"
+  },
+  "homepage": "https://github.com/rafaeltrevino/booksearch#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
