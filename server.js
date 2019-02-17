@@ -3,9 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/mern", {
-        useMongoClient: true
-    }
+    process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true }
 );
 
 if (process.env.NODE_ENV === "production") {
