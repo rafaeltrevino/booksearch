@@ -18,7 +18,7 @@ function ResultList(props) {
                         </div>
                         <div className="card-action">
                             <a href={result.volumeInfo.previewLink}>Preview book</a>
-                            <a href={result.volumeInfo.previewLink}>Click to save</a>
+                            <button id={result.id} onClick={props.saveBook}>Click to save</button>
                         </div>
                     </div>
                 </div>

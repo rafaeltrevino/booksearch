@@ -7,7 +7,8 @@ class SearchResults extends Component {
 
   state = {
     search: "",
-    results: []
+    results: [],
+    saveBook: ""
   };
 
   componentDidMount() {
@@ -19,10 +20,6 @@ class SearchResults extends Component {
       .then(res => this.setState({results: res.data.items}))
       .catch(err => console.log(err));
   };
-
-  saveBook = (book) => {
-
-  }
 
   handleInputChange = event => {
     const name = event.target.name;
@@ -43,6 +40,18 @@ class SearchResults extends Component {
     };
   };
 
+  saveBook = event => {
+    // event.preventDefault();
+    console.log(this)
+    let bookId = this.id;
+    console.log(bookId)
+    let book = this.state.results.find({id: bookId})
+    console.log(book)
+    API.saveBook({book})
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div>
@@ -51,7 +60,10 @@ class SearchResults extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} checkSnippet={this.checkSnippet}/>
+        <ResultList
+          results={this.state.results}
+          checkSnippet={this.checkSnippet}
+          saveBook={this.saveBook}/>
       </div>
     );
   }
