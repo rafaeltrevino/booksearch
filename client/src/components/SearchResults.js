@@ -12,7 +12,7 @@ class SearchResults extends Component {
   };
 
   componentDidMount() {
-    this.searchBooks("");
+    this.searchBooks("The Cay");
   }
 
   searchBooks = query => {
@@ -40,17 +40,7 @@ class SearchResults extends Component {
     };
   };
 
-  saveBook = event => {
-    // event.preventDefault();
-    console.log(this)
-    let bookId = this.id;
-    console.log(bookId)
-    let book = this.state.results.find({id: bookId})
-    console.log(book)
-    API.saveBook({book})
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  };
+  checkThumbnail
 
   render() {
     return (
@@ -63,7 +53,7 @@ class SearchResults extends Component {
         <ResultList
           results={this.state.results}
           checkSnippet={this.checkSnippet}
-          saveBook={this.saveBook}/>
+        />
       </div>
     );
   }

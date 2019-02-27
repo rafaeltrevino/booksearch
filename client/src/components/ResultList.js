@@ -9,7 +9,7 @@ function ResultList(props) {
                 <h5 className="header"><strong>{result.volumeInfo.title}</strong></h5>
                 <div className="card horizontal hoverable">
                     <div className="card-image">
-                        <img src={result.volumeInfo.imageLinks.thumbnail} alt={result.title} target="_blank"/>
+                        <img alt={result.title} target="_blank"/>
                     </div>
                     <div className="card-stacked">
                         <div className="card-content">
@@ -18,7 +18,6 @@ function ResultList(props) {
                         </div>
                         <div className="card-action">
                             <a href={result.volumeInfo.previewLink}>Preview book</a>
-                            <button id={result.id} onClick={props.saveBook}>Click to save</button>
                         </div>
                     </div>
                 </div>
